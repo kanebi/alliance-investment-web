@@ -1,0 +1,11 @@
+{
+  "name": "alliance-investment-web",
+  "private": true,
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev"
+  },
+  "devDependencies": {
+    "wrangler": "^4.45.0"
+  }
+}
