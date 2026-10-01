@@ -519,6 +519,178 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 </style>
 <style id="aci-hide-recaptcha">.grecaptcha-badge,.forminator-g-recaptcha,#captcha-1{display:none!important;}</style>
+<style id="aci-lang-switcher-styles">
+.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate,
+iframe.goog-te-banner-frame,
+iframe.skiptranslate,
+.goog-te-gadget-icon,
+body > .skiptranslate,
+body > .skiptranslate iframe,
+#goog-gt-tt,
+.goog-te-balloon-frame,
+.goog-tooltip,
+.goog-tooltip:hover,
+#google_translate_element {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  height: 0 !important;
+  width: 0 !important;
+  opacity: 0 !important;
+}
+html, body { top: 0 !important; position: static !important; }
+.menu-mobile-overlay:not(.active) {
+  pointer-events: none !important;
+  visibility: hidden !important;
+}
+
+.aci-lang-switcher {
+  --aci-lang-top: 18px;
+  --aci-lang-right: 56px;
+  position: fixed !important;
+  top: var(--aci-lang-top) !important;
+  right: var(--aci-lang-right) !important;
+  left: auto !important;
+  bottom: auto !important;
+  z-index: 2147483000 !important;
+  pointer-events: auto !important;
+  font-family: Poppins, Muli, sans-serif;
+  margin: 0 !important;
+  transform: none !important;
+}
+.aci-lang-switcher__btn {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  min-width: 128px;
+  height: 36px;
+  padding: 0 12px !important;
+  border: 1px solid rgba(26,30,102,0.18) !important;
+  border-radius: 999px !important;
+  background: #fff !important;
+  color: #1a1e66 !important;
+  box-shadow: 0 6px 18px rgba(16, 24, 56, 0.14) !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  line-height: 1 !important;
+  text-decoration: none !important;
+  white-space: nowrap;
+}
+.aci-lang-switcher.is-on-dark .aci-lang-switcher__btn {
+  background: rgba(8, 14, 34, 0.55) !important;
+  border-color: rgba(255,255,255,0.35) !important;
+  color: #fff !important;
+}
+.aci-lang-switcher__btn:hover,
+.aci-lang-switcher__btn:focus {
+  border-color: #3140fc !important;
+  outline: none !important;
+}
+.aci-lang-switcher__icon {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;
+}
+.aci-lang-switcher__caret {
+  margin-left: auto;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+}
+.aci-lang-switcher__menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  min-width: 190px;
+  max-height: min(60vh, 320px);
+  overflow: auto;
+  margin: 0;
+  padding: 6px;
+  list-style: none !important;
+  background: #fff !important;
+  border: 1px solid rgba(26,30,102,0.12);
+  border-radius: 12px;
+  box-shadow: 0 16px 40px rgba(16, 24, 56, 0.18);
+  display: none;
+  z-index: 2147483001 !important;
+}
+.aci-lang-switcher.is-open .aci-lang-switcher__menu { display: block; }
+.aci-lang-switcher__menu li { list-style: none !important; margin: 0 !important; padding: 0 !important; }
+.aci-lang-switcher__menu button {
+  width: 100%;
+  text-align: left;
+  border: 0 !important;
+  background: transparent !important;
+  color: #1a1e66 !important;
+  border-radius: 8px !important;
+  padding: 10px 12px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  box-shadow: none !important;
+  line-height: 1.2 !important;
+}
+.aci-lang-switcher__menu button:hover,
+.aci-lang-switcher__menu button[aria-current="true"] {
+  background: rgba(49, 64, 252, 0.10) !important;
+  color: #3140fc !important;
+}
+.aci-lang-switcher__menu button[data-lang="ar"] {
+  direction: rtl;
+  text-align: right;
+  font-size: 14px !important;
+}
+
+@media (min-width: 992px) {
+  .aci-lang-switcher {
+    --aci-lang-top: 30px;
+    --aci-lang-right: 24px;
+  }
+  .aci-lang-switcher__btn {
+    min-width: 140px;
+    height: 38px;
+  }
+}
+
+@media (max-width: 991px) {
+  .aci-lang-switcher {
+    --aci-lang-top: 18px;
+    --aci-lang-right: 54px;
+  }
+  .aci-lang-switcher__btn {
+    min-width: 0;
+    width: auto;
+    max-width: 42vw;
+    height: 34px;
+    padding: 0 10px !important;
+    gap: 6px;
+    font-size: 11px !important;
+  }
+  .aci-lang-switcher__label-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .aci-lang-switcher__menu {
+    right: 0;
+    left: auto;
+    min-width: 168px;
+  }
+}
+@media (max-width: 420px) {
+  .aci-lang-switcher { --aci-lang-right: 50px; }
+  .aci-lang-switcher__btn {
+    min-width: 96px;
+    padding: 0 8px !important;
+  }
+  .aci-lang-switcher__icon { width: 14px; height: 14px; }
+}
+</style>
 </head>
 
 <body class="archive paged category category-development category-63 wp-custom-logo paged-10 category-paged-10 wp-theme-finano group-blog  reduxon hfeed body-default-font heading-default-font visual-composer header-sticky wpb-js-composer js-comp-ver-8.7.2 vc_responsive">
@@ -619,7 +791,33 @@ height="0" width="0" style="display:none;visibility:hidden" src="data:image/svg+
 
             </div>
 
-            <div id="main-menu-mobile">
+            <div class="aci-lang-switcher" id="aci-lang-switcher">
+  <button type="button" class="aci-lang-switcher__btn" id="aci-lang-btn" aria-haspopup="listbox" aria-expanded="false">
+    <svg class="aci-lang-switcher__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm7.4 9h-3.2a15.4 15.4 0 0 0-1.3-5.2A8.03 8.03 0 0 1 19.4 11zM12 4c.9 0 2.3 1.9 3 5H9c.7-3.1 2.1-5 3-5zM4.6 13h3.2c.2 1.9.7 3.7 1.3 5.2A8.03 8.03 0 0 1 4.6 13zm3.2-2H4.6a8.03 8.03 0 0 1 4.5-5.2A15.4 15.4 0 0 0 7.8 11zM12 20c-.9 0-2.3-1.9-3-5h6c-.7 3.1-2.1 5-3 5zm1.9-2.8A15.4 15.4 0 0 0 16.2 13h3.2a8.03 8.03 0 0 1-5.5 4.2zM9.1 13c.2 1.9.7 3.6 1.3 5H9.1A15.4 15.4 0 0 1 7.8 13h1.3zm5.6 0h1.3a15.4 15.4 0 0 1-1.3 5h-.9c.6-1.4 1.1-3.1 1.3-5zM8.8 11h6.4c-.2-1.9-.7-3.6-1.3-5H10c-.5 1.4-1 3.1-1.2 5z"/>
+    </svg>
+    <span class="aci-lang-switcher__label-text" id="aci-lang-label">English</span>
+    <span class="aci-lang-switcher__caret" aria-hidden="true"></span>
+  </button>
+  <ul class="aci-lang-switcher__menu" id="aci-lang-menu" role="listbox" aria-label="Languages">
+    <li><button type="button" data-lang="en">English</button></li>
+    <li><button type="button" data-lang="ar">العربية</button></li>
+    <li><button type="button" data-lang="zh-CN">中文</button></li>
+    <li><button type="button" data-lang="fr">Français</button></li>
+    <li><button type="button" data-lang="de">Deutsch</button></li>
+    <li><button type="button" data-lang="es">Español</button></li>
+    <li><button type="button" data-lang="pt">Português</button></li>
+    <li><button type="button" data-lang="ru">Русский</button></li>
+    <li><button type="button" data-lang="hi">हिन्दी</button></li>
+    <li><button type="button" data-lang="it">Italiano</button></li>
+    <li><button type="button" data-lang="tr">Türkçe</button></li>
+    <li><button type="button" data-lang="ja">日本語</button></li>
+    <li><button type="button" data-lang="ko">한국어</button></li>
+    <li><button type="button" data-lang="nl">Nederlands</button></li>
+  </ul>
+</div>
+<div id="google_translate_element" aria-hidden="true"></div>
+<div id="main-menu-mobile">
 
                                 <span class="btn-nav-mobile open-menu">
 
@@ -1685,6 +1883,191 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 </script>
+<script id="aci-lang-switcher-script">
+(function () {
+  var LANGS = {
+    en: 'English',
+    ar: 'العربية',
+    'zh-CN': '中文',
+    fr: 'Français',
+    de: 'Deutsch',
+    es: 'Español',
+    pt: 'Português',
+    ru: 'Русский',
+    hi: 'हिन्दी',
+    it: 'Italiano',
+    tr: 'Türkçe',
+    ja: '日本語',
+    ko: '한국어',
+    nl: 'Nederlands'
+  };
+
+  function getCookie(name) {
+    var parts = (document.cookie || '').split(';');
+    for (var i = 0; i < parts.length; i++) {
+      var part = parts[i].trim();
+      if (part.indexOf(name + '=') === 0) {
+        return decodeURIComponent(part.slice(name.length + 1));
+      }
+    }
+    return '';
+  }
+
+  function setLangCookie(lang) {
+    var value = lang && lang !== 'en' ? '/en/' + lang : '';
+    var expires = value
+      ? '; expires=' + new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toUTCString()
+      : '; expires=Thu, 01 Jan 1970 00:00:00 GMT';
+    var host = location.hostname;
+    document.cookie = 'googtrans=' + value + expires + '; path=/';
+    if (host && host.indexOf('.') !== -1) {
+      document.cookie = 'googtrans=' + value + expires + '; path=/; domain=.' + host.replace(/^www./, '');
+    }
+  }
+
+  function currentLang() {
+    var c = getCookie('googtrans') || '';
+    var parts = c.split('/');
+    return parts[2] || 'en';
+  }
+
+  function killTranslateChrome() {
+    try {
+      document.documentElement.style.top = '0';
+      document.body.style.top = '0';
+      document.body.style.position = 'static';
+      var nodes = document.querySelectorAll('.goog-te-banner-frame, iframe.skiptranslate, body > .skiptranslate');
+      for (var i = 0; i < nodes.length; i++) {
+        nodes[i].style.setProperty('display', 'none', 'important');
+        nodes[i].style.setProperty('pointer-events', 'none', 'important');
+        nodes[i].style.setProperty('height', '0', 'important');
+      }
+    } catch (e) {}
+  }
+
+  window.googleTranslateElementInit = function () {
+    if (!window.google || !google.translate) return;
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      autoDisplay: false,
+      includedLanguages: Object.keys(LANGS).join(',')
+    }, 'google_translate_element');
+    killTranslateChrome();
+    setTimeout(killTranslateChrome, 400);
+    setTimeout(killTranslateChrome, 1500);
+  };
+
+  function moveSwitcherToBody() {
+    var el = document.getElementById('aci-lang-switcher');
+    if (el && el.parentElement !== document.body) {
+      document.body.appendChild(el);
+    }
+  }
+
+  function headerMain() {
+    return document.getElementById('header-main') || document.querySelector('#header-wrap #header-main');
+  }
+
+  function alignWithHeader() {
+    var root = document.getElementById('aci-lang-switcher');
+    var header = headerMain();
+    if (!root || !header) return;
+
+    var rect = header.getBoundingClientRect();
+    var centerY = rect.top + rect.height / 2;
+    var btn = root.querySelector('.aci-lang-switcher__btn');
+    var btnH = btn ? btn.offsetHeight : 36;
+    var top = Math.max(8, Math.round(centerY - btnH / 2));
+
+    var right = window.innerWidth <= 991 ? 54 : 24;
+    var mobileBtn = document.querySelector('#main-menu-mobile .btn-nav-mobile, #main-menu-mobile');
+    if (mobileBtn && window.innerWidth <= 991) {
+      var mrect = mobileBtn.getBoundingClientRect();
+      var gap = 10;
+      right = Math.max(48, Math.round(window.innerWidth - mrect.left + gap));
+    }
+
+    root.style.setProperty('--aci-lang-top', top + 'px');
+    root.style.setProperty('--aci-lang-right', right + 'px');
+
+    var onDark = false;
+    var wrap = document.getElementById('header-wrap');
+    if (wrap && wrap.classList.contains('header-layout2')) {
+      var fixed = header.classList.contains('h-fixed');
+      onDark = !fixed && rect.top <= 2;
+    }
+    root.classList.toggle('is-on-dark', onDark);
+  }
+
+  function bind() {
+    moveSwitcherToBody();
+    killTranslateChrome();
+
+    var root = document.getElementById('aci-lang-switcher');
+    var btn = document.getElementById('aci-lang-btn');
+    var menu = document.getElementById('aci-lang-menu');
+    var label = document.getElementById('aci-lang-label');
+    if (!root || !btn || !menu || !label || root.dataset.aciBound === '1') return;
+    root.dataset.aciBound = '1';
+
+    var lang = currentLang();
+    if (!LANGS[lang]) lang = 'en';
+    label.textContent = LANGS[lang];
+    var buttons = menu.querySelectorAll('button[data-lang]');
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].setAttribute('aria-current', buttons[i].getAttribute('data-lang') === lang ? 'true' : 'false');
+    }
+
+    function closeMenu() {
+      root.classList.remove('is-open');
+      btn.setAttribute('aria-expanded', 'false');
+    }
+    function openMenu() {
+      root.classList.add('is-open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      if (root.classList.contains('is-open')) closeMenu();
+      else openMenu();
+    });
+
+    menu.addEventListener('click', function (e) {
+      var target = e.target.closest('button[data-lang]');
+      if (!target) return;
+      e.preventDefault();
+      e.stopPropagation();
+      var next = target.getAttribute('data-lang') || 'en';
+      setLangCookie(next);
+      window.location.reload();
+    });
+
+    document.addEventListener('click', function (e) {
+      if (!root.contains(e.target)) closeMenu();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeMenu();
+    });
+
+    alignWithHeader();
+    window.addEventListener('resize', alignWithHeader);
+    window.addEventListener('scroll', alignWithHeader, { passive: true });
+    setInterval(function () {
+      killTranslateChrome();
+      alignWithHeader();
+    }, 1000);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', bind);
+  } else {
+    bind();
+  }
+})();
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
 </body>
 
 </html>
